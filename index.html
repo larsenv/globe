@@ -4,6 +4,29 @@
     <!-- render globe -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.2.0/model-viewer.min.js"></script>
     <!-- render globe -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Function to determine which track to play
+            function playMusicBasedOnTime() {
+                const currentHour = new Date().getHours();
+                const audio = document.getElementById('audio');
+                let selectedTrack;
+                // Determine if it's day or night
+                if (currentHour >= 5 && currentHour < 18) {
+                    // 50% chance to play day music or news
+                    selectedTrack = Math.random() < 0.5 ? '/music/forecastday.mp3' : '/music/news.mp3';
+                } else {
+                    // 50% chance to play night music or news
+                    selectedTrack = Math.random() < 0.5 ? '/music/forecastnight.mp3' : '/music/news.mp3';
+                }
+                // Set the selected track to the audio element
+                audio.src = selectedTrack;
+                audio.loop = true; // Ensure the audio loops
+                audio.play();
+            }
+            playMusicBasedOnTime();
+        });
+    </script>
     <script src="/js/globe.js"></script>
     <title>Spin the Globe</title>
     <meta name="description" content="Spin the globe used on the Wii Forecast and News Channel">
@@ -12,8 +35,6 @@
     <link rel="shortcut icon" href="/images/globe/poster.webp" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="/css/globe.css">
 </head>
-<style>
-</style>
 <body>
     <audio id="audio"></audio>
     <div id="parallax-container">
