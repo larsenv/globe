@@ -1,1 +1,1 @@
-# wii forecast globe :D
+# Wii forecast globe 
