@@ -1,63 +1,60 @@
 * {
-margin:0; padding:0; box-sizing:border-box;
-cursor: url("images/globe/wii.png"), default;
+  margin : 0;
+  padding : 0;
+  box-sizing : border-box;
+  font-weight : normal;
+  scroll-behavior : smooth;
+  transition : 1s ease-in-out;
+  font-family : Arial, sans-serif;
 }
-
-body,
-html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    cursor: url("images/globe/wii.png"), default;
+body, html {
+  margin : 0;
+  padding : 0;
+  width : 100%;
+  height : 100%;
+  overflow : hidden;
+  cursor : url("images/globe/wii.png"), default;
+  background-color : black;
+  background-image : url("/images/globe/stars.png");
+  background-size : cover;
+  background-repeat : no-repeat;
+  background-position : center;
+  box-shadow : none;
+  border : none;
 }
 .parallax-container {
-    position: relative;
-    height: 100vh;
-    background: url('/images/globe/stars.png') no-repeat center center/cover;
-    /* Stars background */
+  position : relative;
+  height : 100vh;
+  box-shadow : none;
 }
-
+#globearea {
+  margin : auto;
+  width : 100%;
+  max-width : 100%;
+  height : 100%;
+  max-height : 100%;
+  color : white;
+  background-image : url("/forecastchannel/images/stars.png");
+  background-size : auto;
+  color : inherit;
+  border-radius : 3px;
+  padding : 10px;
+  text-align : center;
+  z-index : 5;
+}
 model-viewer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    /* Ensures it's above the background */
+  filter : drop-shadow(0 0 1.5rem rgb(2, 29, 151));
+  position : relative;
+  vertical-align : center; justify-content : center;
+  width : 100%; height: 100%; max-width : 100%; max-height : 100%;
+  z-index : 1;
+  opacity : 100%;
 }
-
 .content {
-    position: relative;
-    z-index: 2;
-    /* Places content above both the background and model-viewer */
-    color: white;
-    text-align: center;
-    padding-top: 20%;
-    font-family: Arial, sans-serif;
-}
-
-model-viewer {
-    filter: drop-shadow(0 0 1.3rem rgb(2, 29, 151));
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    transition:.3s ease-in-out;
-    opacity:100%;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2); 
-
-    /* Ensures it's above the background */
-}
-
-.content {
-    position: relative;
-    z-index: 2;
-    /* Places content above both the background and model-viewer */
-    color: white;
-    text-align: center;
-    padding-top: 20%;
-    font-family: Arial, sans-serif;
+  position : relative;
+  z-index : 4;
+  color : white;
+  text-align : center;
+  padding-top : 20%;
+  font-family : Arial, sans-serif;
 }
