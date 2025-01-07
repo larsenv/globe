@@ -2,20 +2,21 @@
 margin:0; padding:0; box-sizing:border-box;
 cursor: url("images/globe/wii.png"), default;
 }
-html {
-    cursor: url("images/globe/wii.png"), default;
-}
 
 body,
 html {
     margin: 0;
     padding: 0;
     height: 100%;
+    cursor: url("images/globe/wii.png"), default;
+}
+.parallax-container {
     position: relative;
     height: 100vh;
     background: url('/images/globe/stars.png') no-repeat center center/cover;
     /* Stars background */
 }
+
 model-viewer {
     position: absolute;
     top: 0;
@@ -25,6 +26,7 @@ model-viewer {
     z-index: 1;
     /* Ensures it's above the background */
 }
+
 .content {
     position: relative;
     z-index: 2;
