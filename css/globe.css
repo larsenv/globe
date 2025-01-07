@@ -38,7 +38,7 @@ model-viewer {
 }
 
 model-viewer {
-    filter: drop-shadow(0 0 1.3rem rgb(2, 29, 151));
+    filter: drop-shadow(0 0 1.5rem rgb(2, 29, 151)); // globe glowing
     position: absolute;
     top: 0;
     left: 0;
