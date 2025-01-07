@@ -1,36 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-
-
-<!-- render globe -->
-<script src="/images/globe/script.js"></script>
-<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.2.0/model-viewer.min.js"></script>
-<!-- render globe -->
-<script src="/js/globe.js"></script>
-
-<title>Spin the Globe</title>
-<meta name="description" content="Wii Globe model, made by larsenv, cleaned up by ChrisplayzYT/BLOX.">
-<meta name="keywords" content="Wii Forecast Channel Globe, Wii Globe model, Wii 3D Globe, Wii Forecast Channel, Wii News Channel, Wii News Channel Globe">
-    
-<link rel="shortcut icon" href="/images/globe/poster.webp" type="image/x-icon">
-<link rel="stylesheet" href="/css/globe.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wii Globe Online</title>
+    <link rel="shortcut icon" href="https://larsenv.xyz/favicon.ico" type="image/x-icon">
+    <meta name="description" content="Wii Globe model, made by larsenv, cleaned up by ChrisplayzYT/BLOX.">
+    <meta name="keywords" content="Wii Forecast Channel Globe, Wii Globe model, Wii 3D Globe, Wii Forecast Channel, Wii News Channel, Wii News Channel Globe">
+        
 </head>
+<style>
+    * {
+        margin:0;
+        padding:0;
+        overflow:hidden;
+    }
+    body {
+        background-color:black;
+        font-size: 90px;;
+    }
+    #mainn {
+        text-align:center;
+        vertical-align: center;
+        justify-content:center;
+        position:absolute; top:0; left:0; width:100%; height:100%;
+    }
+    #mainn #text {
+        color:white;
+        vertical-align: center;
+        justify-content:center;
+        text-decoration:none;
+        display:block;
+    }
+</style>
+<body>
+<div id="mainn"" style="cursor:pointer;" onclick="window.location.href='globe.html';">
+<div id="text" style="position:absolute;   top:40%; left:0%; bottom:30%; width:100%; height:100%;">
+<p>Globe</p>
 
-<body >
-<img src="/images/globe/stars.png" id="background" style="visibility:hidden; transition:.1s ease-in-out;  transform: translate(-50%, -50%); position:absolute; top:50%; left:50%; right:50%; bottom:50%; width:450px; height:130px;  " alt="">
-
-<audio id="BGMplayer" src="" loop=""></audio>
-
-<div id="globearea">
-    <model-viewer src="/images/globe/earth.gltf" alt="Globe" ar="" ar-modes="webxr scene-viewer quick-look"
-    camera-controls="" poster="/images/globe/poster.webp" shadow-intensity="0" exposure="0.5"
-    camera-orbit="-108.9deg 66deg 0.1432m" field-of-view="30deg" auto-rotate=""></model-viewer>
+<p style="color:rgb(22, 22, 22); font-size:33px;">(click to open globeview)</p>
 </div>
 
-
-</body></html>
-</head>
-
-
+</div>
+</body>
+</html>
