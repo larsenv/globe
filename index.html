@@ -2,7 +2,32 @@
 <html lang="en">
 
 <head>
-    <title>Spin the Globe</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Function to determine which track to play
+            function playMusicBasedOnTime() {
+                const currentHour = new Date().getHours();
+                const audio = document.getElementById('audio');
+                let selectedTrack;
+
+                // Determine if it's day or night
+                if (currentHour >= 5 && currentHour < 18) {
+                    // 50% chance to play day music or news
+                    selectedTrack = Math.random() < 0.5 ? '/music/forecastday.mp3' : '/music/news.mp3';
+                } else {
+                    // 50% chance to play night music or news
+                    selectedTrack = Math.random() < 0.5 ? '/music/forecastnight.mp3' : '/music/news.mp3';
+                }
+
+                // Set the selected track to the audio element
+                audio.src = selectedTrack;
+                audio.loop = true; // Ensure the audio loops
+                audio.play();
+            }
+
+            playMusicBasedOnTime();
+        });
+    </script>
     <style>
         body,
         html {
@@ -38,6 +63,7 @@
             font-family: Arial, sans-serif;
         }
     </style>
+    <title>Spin the Globe</title>
 </head>
 
 <body>
@@ -50,6 +76,7 @@
             camera-controls="" poster="/images/globe/poster.webp" shadow-intensity="0" exposure="0.5"
             camera-orbit="-108.9deg 66deg 0.1432m" field-of-view="30deg" auto-rotate=""></model-viewer>
     </div>
+    <audio id="audio"></audio>
 </body>
 
 </html>
