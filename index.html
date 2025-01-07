@@ -26,6 +26,16 @@
             }
 
             playMusicBasedOnTime();
+
+            // Add sound effect functionality to the model
+            const modelViewer = document.querySelector('model-viewer');
+            const clickSound = new Audio("/sound/mov.wav"); // Click sound
+
+            // Play sound when the model is clicked
+            modelViewer.addEventListener('pointerdown', () => {
+                clickSound.currentTime = 0; // Reset sound
+                clickSound.play();
+            });
         });
     </script>
     <style>
