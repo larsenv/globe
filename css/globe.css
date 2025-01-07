@@ -1,9 +1,9 @@
 * {
 margin:0; padding:0; box-sizing:border-box;
-cursor: url("/images/globe/wii.png"), default;
+cursor: url("images/globe/wii.png"), default;
 }
 html {
-    cursor: url("/images/globe/wii.png"), default;
+    cursor: url("images/globe/wii.png"), default;
 }
 body  {
     background-color:black;
