@@ -37,18 +37,6 @@ model-viewer {
     font-family: Arial, sans-serif;
 }
 
-
-
-#globearea2 {
-    position: relative;
-    height: 100vh;
-    background-color:black;
-    transition:.3s ease-in-out;
-    background-repeat:no-repeat;
-    background-size:cover;
-    background-position:center;
-}
-
 model-viewer {
     filter: drop-shadow(0 0 1.3rem rgb(2, 29, 151));
     position: absolute;
