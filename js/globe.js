@@ -42,7 +42,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // pointer grabs globe
     
     const moveglobearound = new Audio("/sound/forecast_grabglobe.wav"); 
-    
+    const spindaglobe = new Audio("/sound/forecast_spinglobe.wav"); 
+    const moveglobeup = new Audio("/sound/forecast_move_up.wav"); 
+    const moveglobedown = new Audio("/sound/forecast_move_down.wav"); 
+    const moveglobeleft = new Audio("/sound/forecast_spinglobe.wav"); 
+    const movegloberight = new Audio("/sound/forecast_spinglobe.wav"); 
+
+
     wiiglobe.addEventListener('pointerdown', () => {
                     moveglobearound.currentTime = 0; // Reset sound
                     moveglobearound.play();
@@ -53,7 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // pointer moves globe 
     
-    const spindaglobe = new Audio("/sound/forecast_spinglobe.wav"); 
     
     wiiglobe.addEventListener('pointerup', () => {
                     spindaglobe.currentTime = 0; // Reset sound
@@ -65,7 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     
     // up dpad (arrow up) to move globe up
-    const moveglobeup = new Audio("/sound/forecast_move_up.wav"); 
     
     document.addEventListener('keydown', (event) => {
         if (event.key === "ArrowUp") {
@@ -77,7 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // up dpad (arrow up) to move globe up
     
     // down dpad (arrow down) to move globe down
-    const moveglobedown = new Audio("/sound/forecast_move_down.wav"); 
     
     document.addEventListener('keydown', (event) => {
         if (event.key === "ArrowDown") {
@@ -90,7 +93,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         
     // left dpad (arrow left) to move globe left
-    const moveglobeleft = new Audio("/sound/forecast_spinglobe.wav"); 
     
     document.addEventListener('keydown', (event) => {
         if (event.key === "ArrowLeft") {
@@ -103,7 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
         
     // right dpad (arrow right) to move globe right
-    const movegloberight = new Audio("/sound/forecast_spinglobe.wav"); 
     
     document.addEventListener('keydown', (event) => {
         if (event.key === "ArrowRight") {
@@ -130,3 +131,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+// Handles loading the events for <model-viewer>'s slotted progress bar
+
+const onProgress = (event) => {
+    const progressBar = event.target.querySelector('.progress-bar');
+    const updatingBar = event.target.querySelector('.update-bar');
+    updatingBar.style.width = `${event.detail.totalProgress * 100}%`;
+    if (event.detail.totalProgress === 1) {
+      progressBar.classList.add('hide');
+      event.target.removeEventListener('progress', onProgress);
+    } else {
+      progressBar.classList.remove('hide');
+    }
+  };
+  document.querySelector('model-viewer').addEventListener('progress', onProgress);
+
+// Handles loading the events for <model-viewer>'s slotted progress bar
