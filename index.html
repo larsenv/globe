@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- render globe -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.2.0/model-viewer.min.js"></script>
@@ -27,20 +28,27 @@
             playMusicBasedOnTime();
         });
     </script>
+
     <script src="/js/globe.js"></script>
     <title>Spin the Globe</title>
     <meta name="description" content="Spin the globe used on the Wii Forecast and News Channel">
-    <meta name="keywords"
-        content="wii, news, forecast, globe, channel">
+    <meta name="keywords" content="wii, news, forecast, globe, channel">
     <link rel="shortcut icon" href="/images/globe/poster.webp" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="/css/globe.css">
 </head>
+
 <body>
     <audio id="audio"></audio>
-    <div id="parallax-container">
-        <model-viewer src="/images/globe/earth.gltf" alt="Globe" ar="" ar-modes="webxr scene-viewer quick-look"
-            camera-controls="" poster="/images/globe/poster.webp" shadow-intensity="0" exposure="0.5"
-            camera-orbit="-108.9deg 66deg 0.1432m" field-of-view="30deg" auto-rotate=""></model-viewer>
+    <div id="globearea">
+
+        <p onclick="window.location.reload();" style="color:rgba(255, 255, 255, 0.027); font-weight:bold; font-size:auto; position:relative; left:20px; bottom:0;  ">Play BGM</p>
+
+        <model-viewer src="/images/globe/earth.gltf" alt="Wii Globe" ar="" ar-modes="webxr scene-viewer quick-look" camera-controls="" poster="/images/globe/loadingglobe.png" shadow-intensity="0" exposure="0.5" camera-orbit="-108.9deg 66deg 0.1432m" field-of-view="30deg"
+        auto-rotate=""></model-viewer>
+
+
     </div>
+
 </body>
+
 </html>
